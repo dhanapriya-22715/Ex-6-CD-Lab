@@ -44,10 +44,9 @@ int main() {
     printf("\n\n\tStatement\t\tTarget Code\n\n");
 
     while (fgets(line, sizeof(line), fp)) {
-        // Remove newline if exists
+        
         line[strcspn(line, "\n")] = 0;
 
-        // Example format: t1 = a + b
         if (sscanf(line, "%s = %s %c %s", res, op1, &op, op2) == 4) {
             printf("\t%s\t\tMOV %s, R%d\n", line, op2, reg);
             printf("\t\t\t\t");
